@@ -26,7 +26,7 @@ A robust, flexible, and scalable .NET API starter template designed to accelerat
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/your-username/DotNetApiStarter.git
+    git clone https://github.com/TONYOG12/DotNetApiStarter.git
     cd DotNetApiStarter
     ```
 
