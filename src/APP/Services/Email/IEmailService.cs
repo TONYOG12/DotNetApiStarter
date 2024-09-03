@@ -1,6 +1,5 @@
 namespace APP.Services.Email;
 
-public class IEmailService
+public interface IEmailService
 {
-    
 }
