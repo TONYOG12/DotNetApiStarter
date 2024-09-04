@@ -30,8 +30,4 @@
       <ProjectReference Include="..\SHARED\SHARED.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Entities\Logistics\" />
-    </ItemGroup>
-
 </Project>
