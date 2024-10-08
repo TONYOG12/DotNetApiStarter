@@ -222,6 +222,8 @@ app.UseSwaggerUI(options =>
     }        
     options.RoutePrefix = "";
     options.DefaultModelsExpandDepth(-1);
+    options.EnableDeepLinking();
+    options.DisplayRequestDuration();
 });
 
 //app.UseMiddleware<SentryPerformanceMiddleware>();
