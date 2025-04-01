@@ -3,7 +3,6 @@ using APP.Repository;
 using APP.Services.Storage;
 using APP.Services.Token;
 using Microsoft.Extensions.DependencyInjection;
-using SHARED.Provider;
 using StackExchange.Redis;
 
 namespace APP;
@@ -22,7 +21,6 @@ public static class DependencyInjection
         
         services.AddScoped<IBlobStorageService, BlobStorageService>();
         services.AddScoped<IJwtService, JwtService>();
-        services.AddScoped<ITenantProvider, TenantProvider>();
     }
 
     public static void AddSingletonServices(this IServiceCollection services)

@@ -6,23 +6,15 @@ using DOMAIN.Entities.Users;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using SHARED.Provider;
 
 namespace INFRASTRUCTURE.Context;
 
-public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, ITenantProvider tenantProvider) : IdentityDbContext<User, Role, Guid>(options)
+public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<User, Role, Guid>(options)
 {
     
     #region Auth
     public DbSet<PasswordReset> PasswordResets { get; set; }
     public DbSet<RefreshToken> RefreshTokens { get; set; }
-    #endregion
-
-    #region TenantFilter
-    private void ApplyTenantQueryFilter<TEntity>(ModelBuilder modelBuilder) where TEntity : class, IOrganizationType
-    {
-        modelBuilder.Entity<TEntity>().HasQueryFilter(entity => entity.OrganizationName == tenantProvider.Tenant);
-    }
     #endregion
     
     #region SoftDeleteFilter
